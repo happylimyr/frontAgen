@@ -1,0 +1,60 @@
+<p>tour-create works!</p>
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create Tour</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="tourDetails.name" class="form-control" placeholder="Name Tour">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="tourDetails.price" class="form-control" placeholder="price">
+    </div>
+
+    <div class="form-group">
+      <input type="date" [(ngModel)]="tourDetails.dateStart" class="form-control" placeholder="date start">
+    </div>
+
+    <div class="form-group">
+      <input type="date" [(ngModel)]="tourDetails.dateEnd" class="form-control" placeholder="date end">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="tourDetails.peopleNumber" class="form-control" placeholder="people number">
+    </div>
+
+
+    <!--    <select class="custom-select">-->
+    <div class="form-group">
+      <input type="checkbox" [(ngModel)]="tourDetails.firePrice" class="form-control" placeholder="fire price">
+    </div>
+
+    <!--      <option *ngFor="let hotel of hotels" [ngValue]="hotel.id">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name }}</option>-->
+    <!--    </select>-->
+
+
+    <div class="form-group">
+      <select [(ngModel)]="tourDetails.hotel">
+        <option *ngFor="let hotel of hotels" [ngValue]="hotel">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name}}</option>
+      </select>
+      <!--      <select class="custom-select">-->
+      <!--        <option *ngFor="let hotel of hotels" [ngValue]="hotel.idHotel">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name }}</option>-->
+      <!--      </select>-->
+    </div>
+
+    <div class="form-group">
+      <select [(ngModel)]="tourDetails.tourType">
+        <option *ngFor="let tourType of tourTypes" [ngValue]="tourType">{{tourType.name}}</option>
+      </select>
+    </div>
+
+    <!--    <div class="form-group">-->
+    <!--      <input type="text" [(ngModel)]="userDetails.activeStatus" class="form-control" placeholder="Phone">-->
+    <!--    </div>-->
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addTour()">Create User</button>
+    </div>
+
+  </div>
+</div>

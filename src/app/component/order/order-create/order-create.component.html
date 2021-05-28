@@ -1,0 +1,39 @@
+<p>order-create works!</p>
+<p>user-create works!</p>
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create Order</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="orderDetails.orderName" class="form-control" placeholder="order name">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="orderDetails.countOfMembers" class="form-control" placeholder="price">
+    </div>
+
+    <!--      <option *ngFor="let hotel of hotels" [ngValue]="hotel.id">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name }}</option>-->
+    <!--    </select>-->
+
+    <div class="form-group">
+      <select [(ngModel)]="orderDetails.tour">
+        <option *ngFor="let tour of tours" [ngValue]="tour">{{tour.name}}</option>
+      </select>
+      <!--      <select class="custom-select">-->
+      <!--        <option *ngFor="let hotel of hotels" [ngValue]="hotel.idHotel">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name }}</option>-->
+      <!--      </select>-->
+    </div>
+
+    <div class="form-group">
+      <select [(ngModel)]="orderDetails.user">
+        <option *ngFor="let user of users" [ngValue]="user">{{user.loginUser}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addOrder()">add order</button>
+    </div>
+
+
+  </div>
+</div>
