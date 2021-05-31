@@ -24,18 +24,18 @@ export class OrderCreateComponent implements OnInit {
 
 
   @Input() orderDetails: Order =
-    new Order('', '0', 1,
+    new Order(100,'', '0', 1,
       new User(1, '', '',
         new PersonalData('', '', '', ''),
         new Role(''), 1),
-      new Status(''),
-      new Tour('', 0, new Date(), new Date, 1, 0,
+      new Status('registered'),
+      new Tour('', 0, new Date(), new Date(0), 1, 0,
         new Hotel(1, '',
           new Address('',
             new City('',
               new Country(''))),
           new HotelType(1, '')),
-        new TourType(1, 'sss')))
+        new TourType(1, '')))
 
   users: User[] = [];
   tours: Tour[] = [];
@@ -49,7 +49,6 @@ export class OrderCreateComponent implements OnInit {
   ngOnInit(): void {
     this.loadUser()
     this.loadTour()
-
   }
 
   loadUser() {
@@ -63,7 +62,6 @@ export class OrderCreateComponent implements OnInit {
       this.tours = data;
     })
   }
-
 
   addOrder() {
     this.restApi.createOrder(this.orderDetails).subscribe((data: {}) => {

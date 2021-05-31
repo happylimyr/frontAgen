@@ -1,39 +1,94 @@
-<p>order-create works!</p>
-<p>user-create works!</p>
 <div class="container custom-container">
   <div class="col-md-12">
     <h3 class="mb-3 text-center">Create Order</h3>
 
-    <div class="form-group">
-      <input type="text" [(ngModel)]="orderDetails.orderName" class="form-control" placeholder="order name">
+    <div class="form-group row">
+      <label class="col-md-4 col-form-label text-md-right">Input order name</label>
+      <div class="col-md-6">
+        <input type="text" [(ngModel)]="orderDetails.orderName" class="form-control" placeholder="order name">
+      </div>
     </div>
 
-    <div class="form-group">
-      <input type="text" [(ngModel)]="orderDetails.countOfMembers" class="form-control" placeholder="price">
+    <div class="form-group row">
+      <label class="col-md-4 col-form-label text-md-right">Input count of member</label>
+      <div class="col-md-6">
+        <input type="text" [(ngModel)]="orderDetails.countOfMembers" class="form-control" placeholder="coun of member">
+      </div>
     </div>
 
     <!--      <option *ngFor="let hotel of hotels" [ngValue]="hotel.id">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name }}</option>-->
     <!--    </select>-->
-
-    <div class="form-group">
-      <select [(ngModel)]="orderDetails.tour">
-        <option *ngFor="let tour of tours" [ngValue]="tour">{{tour.name}}</option>
-      </select>
-      <!--      <select class="custom-select">-->
-      <!--        <option *ngFor="let hotel of hotels" [ngValue]="hotel.idHotel">{{hotel.name + " " + hotel.address.city.name + " " + hotel.address.name }}</option>-->
-      <!--      </select>-->
+    <div class="form-group row">
+      <label class="col-md-4 col-form-label text-md-right">Select toure</label>
+      <div class="col-md-6">
+        <select [(ngModel)]="orderDetails.tour" class="form-control" placeholder="toure">
+          <option *ngFor="let toure of tours" [ngValue]="toure">{{toure.name}}</option>
+        </select>
+      </div>
     </div>
 
-    <div class="form-group">
-      <select [(ngModel)]="orderDetails.user">
-        <option *ngFor="let user of users" [ngValue]="user">{{user.loginUser}}</option>
-      </select>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">City</th>
+        <th scope="col">Tour type</th>
+        <th scope="col">Date start</th>
+        <th scope="col">Date end</th>
+        <th scope="col">Hotel</th>
+        <th scope="col">Hotel type</th>
+        <th scope="col">Price ₴</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{orderDetails.tour.hotel.address.city.country.name}}</td>
+        <td>{{orderDetails.tour.hotel.address.city.name}}</td>
+        <td>{{orderDetails.tour.tourType.name}}</td>
+        <td>{{orderDetails.tour.dateStart}}</td>
+        <td>{{orderDetails.tour.dateEnd}}</td>
+        <td>{{orderDetails.tour.hotel.name}}</td>
+        <td>{{orderDetails.tour.hotel.hotelType.name}}</td>
+        <td>{{orderDetails.tour.price}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="form-group row">
+      <label class="col-md-4 col-form-label text-md-right">Select user</label>
+      <div class="col-md-6">
+        <select [(ngModel)]="orderDetails.user" class="form-control" placeholder="toure">
+          <option *ngFor="let user of users" [ngValue]="user">{{user.loginUser}}</option>
+        </select>
+      </div>
     </div>
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addOrder()">add order</button>
-    </div>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{orderDetails.user.personalData.firstName}}</td>
+        <td>{{orderDetails.user.personalData.lastName}}</td>
+        <td>{{orderDetails.user.personalData.email}}</td>
+        <td>{{orderDetails.user.personalData.phone}}</td>
+      </tr>
+      </tbody>
+    </table>
 
+
+    <div class="col-md-6 offset-md-6">
+      <button type="submit" class="btn btn-primary" (click)="addOrder()">Create order</button>
+    </div>
 
   </div>
 </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

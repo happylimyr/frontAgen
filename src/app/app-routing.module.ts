@@ -15,8 +15,13 @@ import {AddressListComponent} from "./component/address/address-list/address-lis
 import {CityListComponent} from "./component/city/city-list/city-list.component";
 import {HotelTypeListComponent} from "./component/hotel-type/hotel-type-list/hotel-type-list.component";
 import {TourTypeCreateComponent} from "./component/tour-type/tour-type-create/tour-type-create.component";
+import {LoginComponent} from "./user-managment/login/login.component";
+import {LogoutComponent} from "./user-managment/logout/logout.component";
+import {StartPageComponent} from "./component/start-page/start-page.component";
+import {CreateUserAdminComponent} from "./component/user/create-user-admin/create-user-admin.component";
 
 const routes: Routes = [
+  {path: 'start-page', component: StartPageComponent},
   {path: 'address-list', component: AddressListComponent},
   {path: 'city-list', component: CityListComponent},
   {path: 'hotel-list', component: HotelListComponent},
@@ -30,7 +35,12 @@ const routes: Routes = [
   {path: 'order-list-create', component: OrderCreateComponent},
   {path: 'tour-type-list', component: TourTypeListComponent},
   {path: 'tour-list-create', component: TourCreateComponent},
-  {path: 'tour-type-create', component: TourTypeCreateComponent}
+  {path: 'tour-type-create', component: TourTypeCreateComponent},
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LogoutComponent},
+  {path: 'create-user-admin', component: CreateUserAdminComponent},
+  {path: 'order-list', component: OrderListComponent}
 
 
 ];

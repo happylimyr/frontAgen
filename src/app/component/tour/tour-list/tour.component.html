@@ -1,5 +1,42 @@
-<p>tour works!</p>
-{{tour[0].name}}
-{{tour[1].name}}
-{{tour[2].name}}
-<p> [text] = "tour.name" </p>
+<!--search-->
+<div class="container">
+  <div class="row pt-1 pb-1">
+    <div class="col-lg-12">
+      <h4 class="text-center">Find you're tour</h4>
+    </div>
+  </div>
+</div>
+<section>
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://pbs.twimg.com/media/EGHYvttU4AAYKb7?format=jpg&name=large" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+</section>
+<!--Tours-->
+<div class="container mt-5 mb-5" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h4>Tours</h4>
+      <ul class="timeline" *ngFor="let tour of tour">
+        <li>
+          <a target="_blank" href="https://#">{{tour.name}}</a>
+          <a class="float-right">{{tour.dateStart}} / {{tour.dateEnd}}</a>
+          <p>Country: {{tour.hotel.address.city.country.name}} City: {{tour.hotel.address.city.name}}</p>
+          <p>Hotel name: {{tour.hotel.name}} </p>
+          <p>Hotel type: {{tour.hotel.hotelType.name}}</p>
+          <p>Tour type: {{tour.tourType.name}}</p>
+          <p>Price: {{tour.price}} ₴</p>
+          <p>People: {{tour.peopleNumber}}</p>
+        </li>
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" >Take order</button>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="text-muted mt-5 mb-5 text-center small"></div>

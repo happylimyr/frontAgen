@@ -18,8 +18,8 @@ export class TourTypeCreateComponent implements OnInit {
               public router: Router) {
   }
 
-  ngOnInit(): void {
-    this.addTourType()
+  ngOnInit(){
+
   }
 
   addTourType() {

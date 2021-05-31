@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,12 @@ import { HotelListComponent } from './component/hotel/hotel-list/hotel-list.comp
 import { AddressListComponent } from './component/address/address-list/address-list.component';
 import { CityListComponent } from './component/city/city-list/city-list.component';
 import { HotelTypeListComponent } from './component/hotel-type/hotel-type-list/hotel-type-list.component';
+import { LoginComponent } from './user-managment/login/login.component';
+import { LogoutComponent } from './user-managment/logout/logout.component';
+import { StartPageComponent } from './component/start-page/start-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MyFilterPipePipe } from './component/tour/tour-list/my-filter-pipe.pipe';
+import { CreateUserAdminComponent } from './component/user/create-user-admin/create-user-admin.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +46,19 @@ import { HotelTypeListComponent } from './component/hotel-type/hotel-type-list/h
     HotelListComponent,
     AddressListComponent,
     CityListComponent,
-    HotelTypeListComponent
+    HotelTypeListComponent,
+    LoginComponent,
+    LogoutComponent,
+    StartPageComponent,
+    MyFilterPipePipe,
+    CreateUserAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    // FormsModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

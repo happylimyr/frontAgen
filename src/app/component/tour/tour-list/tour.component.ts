@@ -3,7 +3,6 @@ import {RestApiService} from "../../../shared/rest-api.service";
 import {ActivatedRoute, Router} from '@angular/router';
 import {Tour} from '../../../shared/Tour';
 
-
 @Component({
   selector: 'app-tour',
   templateUrl: './tour.component.html',
@@ -11,7 +10,7 @@ import {Tour} from '../../../shared/Tour';
 })
 export class TourComponent implements OnInit {
 
-
+  filterargs = Tour ;
   tour: Tour[] = [];
 
   constructor(
@@ -22,6 +21,7 @@ export class TourComponent implements OnInit {
 
   ngOnInit() {
     this.loadTour()
+
   }
 
   loadTour() {

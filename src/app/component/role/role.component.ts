@@ -23,5 +23,4 @@ export class RoleComponent implements OnInit {
       this.role = data;
     })
   }
-
 }

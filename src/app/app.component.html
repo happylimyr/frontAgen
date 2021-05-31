@@ -1,34 +1,100 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <title>TravelAgency</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:4200/tour">Travel Agency</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <p><a class="dropdown-item" routerLink="/order-list"> Orders</a></p>
+            <p><a class="dropdown-item" routerLink="/create-user-admin"> Admin Create new User</a></p>
+            <p><a class="dropdown-item" routerLink="/tour-list-create"> Create Tour</a></p>
+            <p><a class="dropdown-item" routerLink="/address-list"> Address list</a></p>
+            <p><a class="dropdown-item" routerLink="/city-list"> City list</a></p>
+            <p><a class="dropdown-item" routerLink="/hotel-list"> Hotel list</a></p>
+            <p><a class="dropdown-item" routerLink="/hotel-type-list"> Hotel type list</a></p>
+            <p><a class="dropdown-item" routerLink="/tour"> Tour</a></p>
+            <p><a class="dropdown-item" routerLink="/role"> ROle</a></p>
+            <p><a class="dropdown-item" routerLink="/user"> User</a></p>
+            <p><a class="dropdown-item" routerLink="/user-list-create"> User create</a></p>
+            <p><a class="dropdown-item" routerLink="/personal-data-list"> PeData</a></p>
+            <p><a class="dropdown-item" routerLink="/user-list-create"> Register</a></p>
+            <p><a class="dropdown-item" routerLink="/order-list-create"> Create order</a></p>
+            <p><a class="dropdown-item" routerLink="/tour-type-list"> TourType</a></p>
+            <p><a class="dropdown-item" routerLink="/tour-type-create"> Create TourType</a></p>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Create
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <p><a class="dropdown-item" routerLink="/create-user-admin"> Admin Create new User</a></p>
+          <p><a class="dropdown-item" routerLink="/tour-list-create"> Create Tour</a></p>
+          <p><a class="dropdown-item" routerLink="/order-list-create"> Create order</a></p>
+          <p><a class="dropdown-item" routerLink="/tour-type-create"> Create TourType</a></p>
+        </div>
+      </li>
+    </ul>
+    <div class="collapse navbar-collapse" >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user-list-create">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
 
-<div>
+<!--<nav>-->
 
-  <p><a routerLink="/address-list"> Address list</a></p>
-  <p><a routerLink="/city-list"> City list</a></p>
-  <p><a routerLink="/hotel-list"> Hotel list</a></p>
-  <p><a routerLink="/hotel-type-list"> Hotel type list</a></p>
+<!--  <ul>-->
+<!--    <p><a routerLink="/address-list"> Address list</a></p>-->
+<!--    <p><a routerLink="/city-list"> City list</a></p>-->
+<!--    <p><a routerLink="/hotel-list"> Hotel list</a></p>-->
+<!--    <p><a routerLink="/hotel-type-list"> Hotel type list</a></p>-->
 
-  <p><a routerLink="/tour"> Tour</a></p>
-  <p><a routerLink="/role"> ROle</a></p>
-  <p><a routerLink="/user"> User</a></p>
-  <p><a routerLink="/user-list-create"> User create</a></p>
-  <p><a routerLink="/personal-data-list"> PeData</a></p>
-  <p><a routerLink="/user-list-create"> Register</a></p>
-  <p><a routerLink="/order-list-create"> Create order</a></p>
-  <p><a routerLink="/tour-type-list"> TourType</a></p>
-  <p><a routerLink="/tour-type-create"> Create TourType</a></p>
-  <p><a routerLink="/tour-list-create"> Create Tour</a></p>
+<!--    <p><a routerLink="/tour"> Tour</a></p>-->
+<!--    <p><a routerLink="/role"> ROle</a></p>-->
+<!--    <p><a routerLink="/user"> User</a></p>-->
+<!--    <p><a routerLink="/user-list-create"> User create</a></p>-->
+<!--    <p><a routerLink="/personal-data-list"> PeData</a></p>-->
+<!--    <p><a routerLink="/user-list-create"> Register</a></p>-->
+<!--    <p><a routerLink="/order-list-create"> Create order</a></p>-->
+<!--    <p><a routerLink="/tour-type-list"> TourType</a></p>-->
+<!--    <p><a routerLink="/tour-type-create"> Create TourType</a></p>-->
+<!--    <p><a routerLink="/tour-list-create"> Create Tour</a></p>-->
 
-  <router-outlet></router-outlet>
-
-</div>
-
+<!--  </ul>-->
+<!--</nav>-->
+<router-outlet></router-outlet>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->

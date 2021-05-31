@@ -1,2 +1,28 @@
-<p>order-list works!</p>
-{{order[0].orderName}}
+<div class="container mt-5 mb-5" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h4>Orders</h4>
+      <ul class="timeline" *ngFor="let order of order">
+        <li>
+          <a target="_blank" href="https://#">{{order.orderName}}</a>
+       <p>{{order.tour.name}}</p>
+       <p>{{order.status.name}}</p>
+       <p>{{order.user.loginUser}}</p>
+       <p>{{order.user.personalData.firstName}}</p>
+       <p>{{order.user.personalData.lastName}}</p>
+       <p>{{order.user.personalData.phone}}</p>
+       <p>{{order.user.personalData.email}}</p>
+       <p>{{order.countOfMembers}}</p>
+        </li>
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" >Update order</button>
+          <button class="btn btn-success btn-lg btn-block" (click)="deleteOrder(order.idOrder)">Delete</button>
+          <button class="btn btn-success btn-lg btn-block" (click)="deleteOrderName(order.orderName)">Delete name</button>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="text-muted mt-5 mb-5 text-center small"></div>
+

@@ -82,15 +82,17 @@ export class RestApiService {
   createOrder(order: Order): Observable<Order> {
     return this.http.post<Order>(this.apiURL + '/order', JSON.stringify(order), this.httpOptions)
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
 
+
+
   createTour(tour: Tour): Observable<Tour> {
     return this.http.post<Tour>(this.apiURL + '/tour', JSON.stringify(tour), this.httpOptions)
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -98,7 +100,7 @@ export class RestApiService {
   createTourType(tourType: TourType): Observable<TourType> {
     return this.http.post<TourType>(this.apiURL + '/tourtype', JSON.stringify(tourType), this.httpOptions)
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -106,7 +108,7 @@ export class RestApiService {
   createUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiURL + '/user', JSON.stringify(user), this.httpOptions)
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -147,6 +149,21 @@ export class RestApiService {
     return this.http.get<Order[]>(this.apiURL + '/order')
       .pipe(
         retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+  deleteOrder(idOrder: number){
+    return this.http.delete<Order[]>(this.apiURL + '/order/id/' + idOrder, this.httpOptions)
+      .pipe(
+        retry(0),
+        catchError(this.handleError)
+      )
+  }
+  deleteOrderName(orderName: string){
+    return this.http.delete<Order[]>(this.apiURL + '/order/' + orderName, this.httpOptions)
+      .pipe(
+        retry(0),
         catchError(this.handleError)
       )
   }

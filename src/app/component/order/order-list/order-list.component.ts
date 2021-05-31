@@ -24,4 +24,19 @@ export class OrderListComponent implements OnInit {
     })
   }
 
+  deleteOrder(idOrder: number) {
+    if (window.confirm('Are you sure, you want to delete?')){
+      this.restApi.deleteOrder(idOrder).subscribe(data => {
+        this.loadOrder()
+      })
+    }
+  }
+
+  deleteOrderName(orderName: string) {
+    if (window.confirm('Are you sure, you want to delete?')){
+      this.restApi.deleteOrderName(orderName).subscribe(data => {
+        this.loadOrder()
+      })
+    }
+  }
 }
