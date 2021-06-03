@@ -29,6 +29,7 @@ import { StartPageComponent } from './component/start-page/start-page.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyFilterPipePipe } from './component/tour/tour-list/my-filter-pipe.pipe';
 import { CreateUserAdminComponent } from './component/user/create-user-admin/create-user-admin.component';
+import { OrderEditComponent } from './component/order/order-edit/order-edit.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CreateUserAdminComponent } from './component/user/create-user-admin/cre
     LogoutComponent,
     StartPageComponent,
     MyFilterPipePipe,
-    CreateUserAdminComponent
+    CreateUserAdminComponent,
+    OrderEditComponent
   ],
   imports: [
     BrowserModule,

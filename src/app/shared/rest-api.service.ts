@@ -41,7 +41,7 @@ export class RestApiService {
   getAddress(): Observable<Address[]> {
     return this.http.get<Address[]>(this.apiURL + '/address')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -49,7 +49,7 @@ export class RestApiService {
   getCity(): Observable<City[]> {
     return this.http.get<City[]>(this.apiURL + '/city')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -57,7 +57,7 @@ export class RestApiService {
   getHotel(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.apiURL + '/hotel')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -66,7 +66,7 @@ export class RestApiService {
   getHotelType(): Observable<HotelType[]> {
     return this.http.get<HotelType[]>(this.apiURL + '/hoteltype')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -74,7 +74,7 @@ export class RestApiService {
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(this.apiURL + '/user')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -116,7 +116,7 @@ export class RestApiService {
   getPersonalData(): Observable<PersonalData[]> {
     return this.http.get<PersonalData[]>(this.apiURL + '/personaldata')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -124,7 +124,7 @@ export class RestApiService {
   getRole(): Observable<Role[]> {
     return this.http.get<Role[]>(this.apiURL + '/role')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -132,7 +132,7 @@ export class RestApiService {
   getTour(): Observable<Tour[]> {
     return this.http.get<Tour[]>(this.apiURL + '/tour')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -140,7 +140,7 @@ export class RestApiService {
   getTourType(): Observable<TourType[]> {
     return this.http.get<TourType[]>(this.apiURL + '/tourtype')
       .pipe(
-        retry(1),
+        retry(0),
         catchError(this.handleError)
       )
   }
@@ -148,7 +148,23 @@ export class RestApiService {
   getOrder(): Observable<Order[]> {
     return this.http.get<Order[]>(this.apiURL + '/order')
       .pipe(
-        retry(1),
+        retry(0),
+        catchError(this.handleError)
+      )
+  }
+
+  getOrderByName(orderName: string): Observable<Order> {
+    return this.http.get<Order>(this.apiURL + '/order/' + orderName)
+      .pipe(
+        retry(0),
+        catchError(this.handleError)
+      )
+  }
+
+  updateOrder(orderName: string, orderData: string): Observable<Order> {
+    return this.http.put<Order>(this.apiURL + '/order/' + orderName, JSON.stringify(orderData), this.httpOptions)
+      .pipe(
+        retry(0),
         catchError(this.handleError)
       )
   }

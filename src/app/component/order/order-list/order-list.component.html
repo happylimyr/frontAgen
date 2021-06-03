@@ -1,28 +1,109 @@
-<div class="container mt-5 mb-5" xmlns="http://www.w3.org/1999/html">
+<!--<div class="container mt-5 mb-5" xmlns="http://www.w3.org/1999/html">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-6 offset-md-3">-->
+<!--      <h4>Orders</h4>-->
+<!--      <ul class="timeline" *ngFor="let order of order">-->
+<!--        <li>-->
+<!--          <a target="_blank" href="https://#">{{order.orderName}}</a>-->
+<!--          <p>{{order.tour.name}}</p>-->
+<!--          <p>{{order.status.name}}</p>-->
+<!--          <p>{{order.user.loginUser}}</p>-->
+<!--          <p>{{order.user.personalData.firstName}}</p>-->
+<!--          <p>{{order.user.personalData.lastName}}</p>-->
+<!--          <p>{{order.user.personalData.phone}}</p>-->
+<!--          <p>{{order.user.personalData.email}}</p>-->
+<!--          <p>{{order.countOfMembers}}</p>-->
+<!--        </li>-->
+
+
+<div class="container" >
   <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h4>Orders</h4>
-      <ul class="timeline" *ngFor="let order of order">
-        <li>
-          <a target="_blank" href="https://#">{{order.orderName}}</a>
-       <p>{{order.tour.name}}</p>
-       <p>{{order.status.name}}</p>
-       <p>{{order.user.loginUser}}</p>
-       <p>{{order.user.personalData.firstName}}</p>
-       <p>{{order.user.personalData.lastName}}</p>
-       <p>{{order.user.personalData.phone}}</p>
-       <p>{{order.user.personalData.email}}</p>
-       <p>{{order.countOfMembers}}</p>
-        </li>
-        <div class="form-group">
-          <button class="btn btn-success btn-lg btn-block" >Update order</button>
-          <button class="btn btn-success btn-lg btn-block" (click)="deleteOrder(order.idOrder)">Delete</button>
-          <button class="btn btn-success btn-lg btn-block" (click)="deleteOrderName(order.orderName)">Delete name</button>
-        </div>
-      </ul>
+    <div class="col">
+      <table class="table table-list-search" >
+        <thead>
+        <tr >
+          <th>Order Name</th>
+          <th>Tour</th>
+          <th>Status</th>
+          <th>Login user</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Count of members</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let order of order">
+        <tr>
+        <td>{{order.orderName}}</td>
+        <td>{{order.tour.name}}</td>
+        <td>{{order.status.name}}</td>
+        <td>{{order.user.loginUser}}</td>
+        <td>{{order.user.personalData.firstName}}</td>
+        <td>{{order.user.personalData.lastName}}</td>
+        <td>{{order.user.personalData.phone}}</td>
+        <td>{{order.user.personalData.email}}</td>
+        <td>{{order.countOfMembers}}</td>
+          <button class="btn btn-success btn-lg btn-block" (click)="updateOrder(order.orderName, orderName)">Update</button>
+          <button class="btn btn-success btn-lg btn-block" [routerLink]="['/order-edit/',order.orderName]">Edit</button>
+          <button class="btn btn-danger btn-lg btn-block" (click)="deleteOrder(order.idOrder)">Delete</button>
+        </tr>
+
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+<!--<table class="table" *ngFor="let order of order">-->
+<!--  <thead class="thead-dark">-->
+<!--  <tr>-->
+<!--    <th>Tour</th>-->
+<!--    <th>Status</th>-->
+<!--    <th>Login user</th>-->
+<!--    <th>First name</th>-->
+<!--    <th>Last name</th>-->
+<!--    <th>Phone</th>-->
+<!--    <th>Email</th>-->
+<!--    <th>Phone</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr>-->
+<!--    <td>{{order.tour.name}}</td>-->
+<!--    <td>{{order.status.name}}</td>-->
+<!--    <td>{{order.user.loginUser}}</td>-->
+<!--    <td>{{order.user.personalData.firstName}}</td>-->
+<!--    <td>{{order.user.personalData.lastName}}</td>-->
+<!--    <td>{{order.user.personalData.phone}}</td>-->
+<!--    <td>{{order.user.personalData.email}}</td>-->
+<!--    <td>{{order.countOfMembers}}</td>-->
+<!--    <td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--<div class="form-group">-->
+<!--  <button class="btn btn-success btn-lg btn-block">Update order</button>-->
+<!--  &lt;!&ndash;          <button class="btn btn-success btn-lg btn-block" (click)="deleteOrder(order.idOrder)">Delete</button>&ndash;&gt;-->
+<!--  &lt;!&ndash;          <button class="btn btn-success btn-lg btn-block" (click)="deleteOrderName(order.orderName)">Delete name&ndash;&gt;-->
+<!--  &lt;!&ndash;          </button>&ndash;&gt;-->
+<!--</div>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
 
 <div class="text-muted mt-5 mb-5 text-center small"></div>
 
+<!--    <div class="col-md-3">-->
+<!--      <form action="#" method="get">-->
+<!--        <div class="input-group">-->
+<!--          &lt;!&ndash; USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH &ndash;&gt;-->
+<!--          <input class="form-control" id="system-search" name="q" placeholder="Search for" required>-->
+<!--          <span class="input-group-btn">-->
+<!--                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>-->
+<!--                    </span>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->

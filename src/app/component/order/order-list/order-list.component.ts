@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Order} from "../../../shared/Order";
 import {RestApiService} from "../../../shared/rest-api.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-order-list',
@@ -10,8 +11,13 @@ import {RestApiService} from "../../../shared/rest-api.service";
 export class OrderListComponent implements OnInit {
 
   order: Order[] = [];
+  orderName = this.actRoute.snapshot.params['orderName'];
+  orderData: any = {};
 
-  constructor(public restApi: RestApiService) {
+  constructor(public restApi: RestApiService,
+              public actRoute: ActivatedRoute,
+              public router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -25,18 +31,28 @@ export class OrderListComponent implements OnInit {
   }
 
   deleteOrder(idOrder: number) {
-    if (window.confirm('Are you sure, you want to delete?')){
+    if (window.confirm('Are you sure, you want to delete?')) {
       this.restApi.deleteOrder(idOrder).subscribe(data => {
         this.loadOrder()
       })
     }
   }
 
+  updateOrder(orderName: string, orderData: string) {
+    if (window.confirm('Are you sure, you want to update?')) {
+      this.restApi.updateOrder(this.orderName, this.orderData).subscribe(data => {
+        this.router.navigate(['/order-list'])
+      })
+    }
+  }
+
   deleteOrderName(orderName: string) {
-    if (window.confirm('Are you sure, you want to delete?')){
+    if (window.confirm('Are you sure, you want to delete?')) {
       this.restApi.deleteOrderName(orderName).subscribe(data => {
         this.loadOrder()
       })
     }
   }
+
+
 }

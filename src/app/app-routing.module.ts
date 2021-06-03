@@ -19,9 +19,13 @@ import {LoginComponent} from "./user-managment/login/login.component";
 import {LogoutComponent} from "./user-managment/logout/logout.component";
 import {StartPageComponent} from "./component/start-page/start-page.component";
 import {CreateUserAdminComponent} from "./component/user/create-user-admin/create-user-admin.component";
+import {OrderEditComponent} from "./component/order/order-edit/order-edit.component";
 
 const routes: Routes = [
   {path: 'start-page', component: StartPageComponent},
+
+  {path: 'order-edit/:orderName', component: OrderEditComponent},
+
   {path: 'address-list', component: AddressListComponent},
   {path: 'city-list', component: CityListComponent},
   {path: 'hotel-list', component: HotelListComponent},
